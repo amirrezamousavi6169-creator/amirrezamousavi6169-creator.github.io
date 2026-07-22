@@ -1,0 +1,23 @@
+{
+  "name": "Amirreza Mousavi — Business Developer",
+  "short_name": "Mousavi",
+  "description": "Business Developer and startup strategist. Founder of Wentoevent.",
+  "start_url": "./index.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0A0B0D",
+  "theme_color": "#0A0B0D",
+  "dir": "auto",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Ventures", "url": "./en/ventures.html" },
+    { "name": "Contact",  "url": "./en/contact.html" },
+    { "name": "فارسی",    "url": "./fa/index.html" }
+  ]
+}
