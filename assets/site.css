@@ -195,10 +195,12 @@ main>section:nth-child(4){animation-delay:.15s}
 .heroid-txt{min-width:0}
 .photo{
   width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none;
-  border:1px solid var(--line2);filter:grayscale(1) contrast(.95);
-  transition:filter .3s;
+  border:1px solid var(--line2);
+  /* full colour — a face should read as a face */
+  box-shadow:0 0 0 3px rgba(126,166,255,.10);
+  transition:box-shadow .3s;
 }
-.heroid:hover .photo{filter:none}
+.heroid:hover .photo{box-shadow:0 0 0 4px rgba(126,166,255,.22)}
 @media (max-width:400px){.photo{width:58px;height:58px}}
 
 /* inline "read more" link */
@@ -240,10 +242,77 @@ html[dir="rtl"] .phone .revealtxt{font-family:var(--fa);letter-spacing:0;text-tr
   .eyebrow,.casenum,.rowlabel,.fact-l,.when{color:#555!important}
   .lede,.desc,.prose p,.points li,.tag,.role2{color:#333!important}
   .rolename{color:#000!important;font-weight:600}
-  .logo,.photo{filter:grayscale(1)!important;opacity:1!important;border-color:#ccc!important}
+  .logo{filter:grayscale(1)!important;opacity:1!important;border-color:#ccc!important}
   .chip,.btn{border-color:#ccc!important;color:#333!important}
   .entry,.group,.row,.facts,.caseblock{border-color:#ddd!important}
   .cta{border-color:#999!important}
   a{color:#000!important;text-decoration:none}
   .phone.shown{color:#000!important}
+}
+
+/* ================= animated background =================
+   Two slow-drifting glows plus a faint grid. Everything is
+   fixed, behind the content, and animates transform only, so
+   it costs almost nothing and never triggers layout. */
+
+.bgfx{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  overflow:hidden;background:var(--ink);
+}
+.bgfx span{
+  position:absolute;display:block;border-radius:50%;
+  filter:blur(70px);opacity:.5;will-change:transform;
+}
+.bgfx .g1{
+  width:60vmax;height:60vmax;top:-28vmax;left:-14vmax;
+  background:radial-gradient(circle,rgba(126,166,255,.16),transparent 66%);
+  animation:drift1 34s ease-in-out infinite alternate;
+}
+.bgfx .g2{
+  width:48vmax;height:48vmax;top:34vmax;right:-20vmax;
+  background:radial-gradient(circle,rgba(126,166,255,.09),transparent 68%);
+  animation:drift2 46s ease-in-out infinite alternate;
+}
+.bgfx .g3{
+  width:40vmax;height:40vmax;bottom:-22vmax;left:26vmax;
+  background:radial-gradient(circle,rgba(160,150,220,.07),transparent 70%);
+  animation:drift3 58s ease-in-out infinite alternate;
+}
+/* graph-paper grid, barely there — it drifts a single cell and loops */
+.bgfx .grid{
+  position:absolute;inset:-60px;border-radius:0;filter:none;opacity:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:gridshift 24s linear infinite;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 15%,transparent 75%);
+          mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 15%,transparent 75%);
+}
+
+@keyframes drift1{
+  from{transform:translate3d(0,0,0) scale(1)}
+  to{transform:translate3d(9vmax,7vmax,0) scale(1.14)}
+}
+@keyframes drift2{
+  from{transform:translate3d(0,0,0) scale(1.08)}
+  to{transform:translate3d(-11vmax,-6vmax,0) scale(1)}
+}
+@keyframes drift3{
+  from{transform:translate3d(0,0,0) scale(1)}
+  to{transform:translate3d(7vmax,-9vmax,0) scale(1.2)}
+}
+@keyframes gridshift{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(60px,60px,0)}
+}
+
+/* the sticky header sits on a moving backdrop, so it needs its own tint */
+.bar{background:rgba(10,11,13,.72)}
+
+@media (prefers-reduced-motion:reduce){
+  .bgfx span{animation:none!important}
+}
+@media print{
+  .bgfx{display:none!important}
 }
