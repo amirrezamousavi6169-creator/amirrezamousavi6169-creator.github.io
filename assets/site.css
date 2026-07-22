@@ -187,3 +187,63 @@ main>section:nth-child(4){animation-delay:.15s}
   main>section{opacity:1;transform:none;animation:none}
   *{transition:none!important}
 }
+
+/* ================= additions ================= */
+
+/* profile photo — removes itself if assets/photo.jpg isn't there */
+.heroid{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.heroid-txt{min-width:0}
+.photo{
+  width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid var(--line2);filter:grayscale(1) contrast(.95);
+  transition:filter .3s;
+}
+.heroid:hover .photo{filter:none}
+@media (max-width:400px){.photo{width:58px;height:58px}}
+
+/* inline "read more" link */
+.inline-link{
+  display:inline-block;margin-top:16px;font-size:13.5px;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid transparent;transition:border-color .18s;
+}
+.inline-link:hover{border-bottom-color:var(--accent)}
+
+/* ---------- case study ---------- */
+.caseid{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.caseid h1{font-size:clamp(1.7rem,6vw,2.2rem);font-weight:600;letter-spacing:-.03em}
+html[dir="rtl"] .caseid h1{letter-spacing:0}
+.casesub{margin-bottom:14px}
+.caseblock{padding-block:clamp(28px,7vw,40px);border-top:1px solid var(--line)}
+.casenum{font-size:11px;color:var(--dim);margin-bottom:10px}
+.caseh{font-size:1.15rem;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
+html[dir="rtl"] .caseh{letter-spacing:0}
+.statusblock{border-top:1px solid var(--line)}
+.cta{border-inline-start:2px solid var(--accent);padding-inline-start:16px;margin-bottom:30px}
+.cta p{color:var(--text)}
+
+/* phone numbers are assembled in JS, so scrapers get nothing from the HTML */
+.phone{cursor:pointer;color:var(--accent)}
+.phone .revealtxt{font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+html[dir="rtl"] .phone .revealtxt{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:12px}
+.phone.shown{color:var(--text);direction:ltr;display:inline-block}
+
+/* ---------- print: the site becomes the résumé ---------- */
+@media print{
+  @page{margin:14mm}
+  .bar,footer,.actions,.skip,.orgstrip,.previewnote,.inline-link,.note{display:none!important}
+  html,body{background:#fff!important;color:#111!important;font-size:10.5pt;line-height:1.5}
+  .wrap{max-width:100%;padding:0}
+  main>section{opacity:1!important;transform:none!important;animation:none!important}
+  section,.entry,.group,.row,.caseblock{page-break-inside:avoid;padding-block:10px}
+  h1,.bigname{font-size:20pt;color:#000!important}
+  h2,.caseh,.grouptitle{font-size:12pt;color:#000!important}
+  .eyebrow,.casenum,.rowlabel,.fact-l,.when{color:#555!important}
+  .lede,.desc,.prose p,.points li,.tag,.role2{color:#333!important}
+  .rolename{color:#000!important;font-weight:600}
+  .logo,.photo{filter:grayscale(1)!important;opacity:1!important;border-color:#ccc!important}
+  .chip,.btn{border-color:#ccc!important;color:#333!important}
+  .entry,.group,.row,.facts,.caseblock{border-color:#ddd!important}
+  .cta{border-color:#999!important}
+  a{color:#000!important;text-decoration:none}
+  .phone.shown{color:#000!important}
+}

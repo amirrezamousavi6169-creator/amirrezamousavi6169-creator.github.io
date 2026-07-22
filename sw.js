@@ -1,9 +1,9 @@
 /* Bump CACHE whenever you change the site — installed devices will refresh. */
-const CACHE = 'am-v1';
+const CACHE = 'am-v2';
 const SHELL = [
   './', './index.html', './manifest.json', './assets/site.css', './assets/site.js',
-  './en/index.html','./en/ventures.html','./en/experience.html','./en/skills.html','./en/contact.html',
-  './fa/index.html','./fa/ventures.html','./fa/experience.html','./fa/skills.html','./fa/contact.html'
+  './en/index.html','./en/wentoevent.html','./en/ventures.html','./en/experience.html','./en/skills.html','./en/contact.html',
+  './fa/index.html','./fa/wentoevent.html','./fa/ventures.html','./fa/experience.html','./fa/skills.html','./fa/contact.html'
 ];
 
 self.addEventListener('install', e => {
