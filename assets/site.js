@@ -31,3 +31,41 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('../sw.js').catch(function(){});
   });
 }
+
+/* ---- email chooser: mailto alone fails silently on many machines ---- */
+(function(){
+  var wrap = document.querySelector('.mailwrap');
+  if(!wrap) return;
+  var btn = wrap.querySelector('.mailbtn');
+  var pop = wrap.querySelector('.mailpop');
+  var copy = wrap.querySelector('.mailcopy');
+  var addr = wrap.getAttribute('data-addr');
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    pop.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e){
+    if(!wrap.contains(e.target)) pop.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') pop.classList.remove('open');
+  });
+  if(copy) copy.addEventListener('click', function(){
+    var done = function(){
+      var t = copy.querySelector('.hint');
+      if(t){ var old = t.textContent; t.textContent = '✓'; setTimeout(function(){ t.textContent = old; }, 1600); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = addr; ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(err){}
+      document.body.removeChild(ta);
+    }
+  });
+})();
