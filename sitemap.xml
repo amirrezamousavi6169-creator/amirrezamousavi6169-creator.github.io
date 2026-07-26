@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://amirrezamousavi.ir/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/index.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/index.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/en/ventures.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/ventures.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/ventures.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/ventures.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/en/experience.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/experience.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/experience.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/experience.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/en/skills.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/skills.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/skills.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/skills.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/skills.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/contact.html"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/contact.html"/>
+  </url>
+</urlset>
