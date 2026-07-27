@@ -398,3 +398,8 @@ html[dir="rtl"] .sharepop a,html[dir="rtl"] .sharepop button{font-family:var(--f
 .sharepop a:hover,.sharepop button:hover{background:rgba(255,255,255,.05)}
 .sharepop .hint{font-family:var(--mono);font-size:10px;color:var(--dim)}
 @media (max-width:430px){.sharepop{min-width:min(74vw,240px)}}
+
+/* quiet footer writing link */
+.foot-sep{color:var(--line2)}
+.foot-link{color:var(--dim);text-decoration:none}
+.foot-link:hover{color:var(--text)}
