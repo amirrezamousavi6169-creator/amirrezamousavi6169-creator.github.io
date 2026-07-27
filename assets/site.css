@@ -403,3 +403,18 @@ html[dir="rtl"] .sharepop a,html[dir="rtl"] .sharepop button{font-family:var(--f
 .foot-sep{color:var(--line2)}
 .foot-link{color:var(--dim);text-decoration:none}
 .foot-link:hover{color:var(--text)}
+
+
+/* ---------- automatic light mode (follows device setting) ---------- */
+@media (prefers-color-scheme: light){
+  :root{
+    --ink:#F7F5F1;
+    --panel:#FFFFFF;
+    --line:#E6E2DB;
+    --line2:#D4CFC5;
+    --text:#1A1C20;
+    --muted:#5A616B;
+    --dim:#8A8F98;
+    --accent:#3D6FD6;
+  }
+}
