@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Experience — Amirreza Mousavi</title>
@@ -51,6 +52,7 @@
     </nav>
     <div class="barend">
       <button id="install" class="mono ghost" type="button" hidden>Install</button>
+      <button id="themebtn" class="mono ghost" type="button" aria-label="Toggle light or dark theme" title="Theme">◐</button>
       <a class="mono ghost" href="../fa/experience.html">FA</a>
     </div>
   </div>
@@ -141,5 +143,20 @@
   <p class="mono">© <span id="y"></span> Amirreza Mousavi<span class="foot-sep"> Â· </span><a class="foot-link" href="writing/what-bd-does.html">Writing</a></p>
 </footer>
 <script src="../assets/site.js"></script>
+<script>
+(function(){
+  var btn=document.getElementById("themebtn"); if(!btn) return;
+  function cur(){return document.documentElement.getAttribute("data-theme")==="light"?"light":"dark";}
+  function paint(){btn.textContent = cur()==="light" ? "◑" : "◐";}
+  paint();
+  btn.addEventListener("click",function(){
+    var next = cur()==="light" ? "dark" : "light";
+    if(next==="light"){document.documentElement.setAttribute("data-theme","light");}
+    else{document.documentElement.removeAttribute("data-theme");}
+    try{localStorage.setItem("theme",next);}catch(e){}
+    paint();
+  });
+})();
+</script>
 </body>
 </html>
