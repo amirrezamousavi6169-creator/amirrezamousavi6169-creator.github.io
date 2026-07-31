@@ -1,5 +1,5 @@
 /* Bump CACHE whenever you change the site — installed devices will refresh. */
-const CACHE = 'am-v6';
+const CACHE = 'am-v7';
 const SHELL = [
   './', './index.html', './manifest.json', './assets/site.css', './assets/site.js',
   './en/index.html','./en/ventures.html','./en/experience.html','./en/skills.html','./en/contact.html',

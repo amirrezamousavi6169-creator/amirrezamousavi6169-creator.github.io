@@ -52,6 +52,16 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/contact.html"/>
   </url>
   <url>
+    <loc>https://amirrezamousavi.ir/en/writing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/writing/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/writing/"/>
+  </url>
+  <url>
+    <loc>https://amirrezamousavi.ir/fa/writing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amirrezamousavi.ir/en/writing/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://amirrezamousavi.ir/fa/writing/"/>
+  </url>
+  <url>
     <loc>https://amirrezamousavi.ir/en/writing/what-bd-does.html</loc>
   </url>
   <url>
