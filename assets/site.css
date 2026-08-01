@@ -98,6 +98,19 @@ html[dir="rtl"] .eyebrow{font-family:var(--fa);letter-spacing:0;text-transform:n
 .prose p{color:var(--muted)}
 .prose p+p{margin-top:14px}
 
+/* ---------- long-form article body ---------- */
+/* the global * reset zeroes heading margins, so .article restates them */
+.article h2{
+  font-size:1.15rem;font-weight:600;color:var(--text);
+  letter-spacing:-.015em;line-height:1.35;
+  margin-top:36px;margin-bottom:12px;
+}
+html[dir="rtl"] .article h2{letter-spacing:0;line-height:1.6}
+.article h2:first-child{margin-top:0}
+.article .points{margin-block:16px}
+.article .points+p{margin-top:14px}
+.article strong{color:var(--text);font-weight:600}
+
 .pagehead{padding-block:clamp(40px,10vw,64px) 8px}
 .pagehead h1{font-size:clamp(1.7rem,6vw,2.2rem);font-weight:600;letter-spacing:-.03em;margin-bottom:10px}
 html[dir="rtl"] .pagehead h1{letter-spacing:0}
